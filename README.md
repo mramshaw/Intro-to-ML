@@ -1,4 +1,4 @@
-# Intro to Machine Learning - Pattern Recognition for Fun and Profit
+# Intro to Machine Learning - Pattern Recognition for Fun & Profit
 
 ## Overview
 
@@ -42,6 +42,22 @@ To install this library in multi-user mode (not recommended) with `pip`:
 To install this library in single-user mode (recommended) with `pip`:
 
         pip install --user scikit-learn
+
+## numpy
+
+It's not really possible to do much of anything in Python without `numpy` (and in fact many of the `scikit-learn` examples use it).
+
+Verify its presence:
+
+        pip list --format=legacy | grep numpy
+
+To install this library in multi-user mode (not recommended) with `pip`:
+
+        pip install -U numpy
+
+To install this library in single-user mode (recommended) with `pip`:
+
+        pip install --user numpy
 
 ## TODO
 
