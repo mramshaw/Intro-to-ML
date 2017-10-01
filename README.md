@@ -24,8 +24,10 @@ For a more sombre view of things, the following article is worth reading:
 
 ## Prerequisites
 
-1. Python
-2. pip
+1. Python (either Python 2 or Python 3 - or even __both__)
+2. `pip` (if using Python 2) or `pip3` (if using Python 3)
+
+`pip` (or `pip3`) is the Package manager for Python, much as `npm` is the package manager for the Node JavaScript platform.
 
 ## scikit-learn
 
@@ -35,29 +37,34 @@ The latest version may be found here:
 
         http://scikit-learn.org/stable/
 
-To install this library in multi-user mode (not recommended) with `pip`:
+To install this library in multi-user mode (not recommended) with `pip` (replace with `pip3` if using Python 3):
 
         pip install -U scikit-learn
 
-To install this library in single-user mode (recommended) with `pip`:
+To install this library in single-user mode (recommended) with `pip` (replace with `pip3` if using Python 3):
 
         pip install --user scikit-learn
 
-## numpy
+## Libraries
 
-It's not really possible to do much of anything in Python without `numpy` (and in fact many of the `scikit-learn` examples use it).
+It's not really possible to do much of anything in Python without additional libraries.
 
-Verify its presence:
+Essential libraries include:
+
+* [NumPy](http://www.numpy.org/)
+* [SciPy](https://www.scipy.org/index.html)
+
+Useful optional libraries include:
+
+* [pandas](http://pandas.pydata.org/)
+
+Verify library presence and version with `pip` as with `scikit-learn`:
 
         pip list --format=legacy | grep numpy
 
-To install this library in multi-user mode (not recommended) with `pip`:
+[Replace `numpy` above with either `scipy` or `pandas` as necessary.]
 
-        pip install -U numpy
-
-To install this library in single-user mode (recommended) with `pip`:
-
-        pip install --user numpy
+Install the library with `pip` (either multi-user or single-user) as with `scikit-learn` above.
 
 ## TODO
 
