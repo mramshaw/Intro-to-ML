@@ -25,6 +25,14 @@ For a more sombre view of things, the following article is worth reading:
 ## Prerequisites
 
 1. Python (either Python 2 or Python 3 - or even __both__)
+
+Chris Manning, Stanford, 3 Apr 2017:
+
+> "Essentially, Python has just become the 'lingua franca' of nearly all the
+> deep learning toolkits, so that seems the thing to use."
+
+        https://youtu.be/OQQ-W_63UgQ?list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6&t=2102
+
 2. `pip` (if using Python 2) or `pip3` (if using Python 3)
 
 `pip` (or `pip3`) is the Package manager for Python, much as `npm` is the package manager for the Node JavaScript platform.
