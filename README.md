@@ -74,6 +74,16 @@ Verify library presence and version with `pip` as with `scikit-learn`:
 
 Install the library with `pip` (either multi-user or single-user) as with `scikit-learn` above.
 
+## requirements.txt
+
+Of course, it's also possible (as with __npm__ or __composer__) to install all dependencies in one fell swoop (probably a _best practice_).
+
+Simply list the dependencies in a file (for example `requirements` or `requirements.txt`) and install from it:
+
+        pip install --user -r requirements.txt
+
+[Note the `--user` option, which may be omitted for a Global install, also the `-r` option to specify an input file.]
+
 ## TODO
 
 - [ ] Finish course
