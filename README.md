@@ -28,7 +28,7 @@ For a more sombre view of things, the following article is worth reading:
 
 Chris Manning, Stanford, 3 Apr 2017:
 
-> "Essentially, Python has just become the 'lingua franca' of nearly all the
+> "Essentially, Python has just become the [lingua franca](https://en.wikipedia.org/wiki/Lingua_franca) of nearly all the
 > deep learning toolkits, so that seems the thing to use."
 
         https://youtu.be/OQQ-W_63UgQ?list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6&t=2102
