@@ -64,13 +64,14 @@ Essential libraries include:
 
 Useful optional libraries include:
 
+* [matplotlib](https://matplotlib.org/)
 * [pandas](http://pandas.pydata.org/)
 
 Verify library presence and version with `pip` as with `scikit-learn`:
 
         pip list --format=legacy | grep numpy
 
-[Replace `numpy` above with either `scipy` or `pandas` as necessary.]
+[Replace `numpy` above as necessary.]
 
 Install the library with `pip` (either multi-user or single-user) as with `scikit-learn` above.
 
