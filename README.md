@@ -24,14 +24,14 @@ For a more sombre view of things, the following article is worth reading:
 
 ## Prerequisites
 
-1. Python (either Python 2 or Python 3 - or even __both__)
-
 Chris Manning, Stanford, 3 Apr 2017:
 
 > "Essentially, Python has just become the [lingua franca](https://en.wikipedia.org/wiki/Lingua_franca) of nearly all the
 > deep learning toolkits, so that seems the thing to use."
 
         https://youtu.be/OQQ-W_63UgQ?list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6&t=2102
+
+1. Python (either Python 2 or Python 3 - or even __both__)
 
 2. `pip` (if using Python 2) or `pip3` (if using Python 3)
 
@@ -101,6 +101,8 @@ You can find an interview with co-author Katie Malone here:
 
 ## Alternatives
 
-This looks like an interesting option too:
+The following look like interesting options too:
+
+        http://web.stanford.edu/class/cs224n/
 
         http://openclassroom.stanford.edu/MainFolder/CoursePage.php?course=MachineLearning
