@@ -20,7 +20,7 @@ I have no idea what hardware the initial benchmark was actually run on, but the 
 
 ![CS224N_results](./images/CS224N_results.png)
 
-My results (which are quite a bit different), run on ___my___hardware, were as follows:
+My results (which are quite a bit different), run on ___my___ hardware, were as follows:
 
     In [11]: timeit [W.dot(wordvectors_list[i]) for i in range(N)]
     1000 loops, best of 3: 861 µs per loop
