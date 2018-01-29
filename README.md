@@ -73,6 +73,15 @@ Verify library presence and version with `pip` as with `scikit-learn`:
 
 [Replace `numpy` above as necessary.]
 
+Or use `try_import.py` as shown:
+
+    $ python try_import.py numpy scipy sklearn keras
+    "numpy" was imported
+    "scipy" was imported
+    "sklearn" was imported
+    "keras" could not be imported - try "pip install --user keras"
+    $
+
 Install the library with `pip` (either multi-user or single-user) as with `scikit-learn` above.
 
 ## requirements.txt
