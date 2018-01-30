@@ -17,9 +17,6 @@ To run, type the following:
 The results should be as follows:
 
     $ python iris_classifier.py 
-    $
-
-    $ python iris_classifier.py 
     Labelled:   [0 0 1 1 2 2]
     Classifier: [0 0 1 1 2 2]
 
