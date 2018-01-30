@@ -115,3 +115,12 @@ The following look like interesting options too:
         http://web.stanford.edu/class/cs224n/
 
         http://openclassroom.stanford.edu/MainFolder/CoursePage.php?course=MachineLearning
+
+## Quick Hits
+
+For an easy (and quick) introduction to the various Python tools and ML concepts:
+
+        https://www.youtube.com/playlist?list=PLOU2XLYxmsIIuiBfYad6rFYQU_jL2ryal
+
+            [Machine Learning Recipes #1](./Hello World/)
+            [Machine Learning Recipes #2](./Iris/)
