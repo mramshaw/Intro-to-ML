@@ -1,4 +1,5 @@
-# Intro to Machine Learning - Pattern Recognition for Fun & Profit
+# Introduction to Machine Learning
+# Pattern Recognition for Fun & Profit
 
 ## Overview
 
@@ -124,3 +125,5 @@ For an easy (and quick) introduction to the various Python tools and ML concepts
 
 1. [Machine Learning Recipes #1](./Hello_World/)
 2. [Machine Learning Recipes #2](./Iris/)
+3. [Machine Learning Recipes #3](./Features/)
+4. [Machine Learning Recipes #4](./Pipeline/)
