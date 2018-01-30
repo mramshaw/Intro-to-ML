@@ -122,5 +122,5 @@ For an easy (and quick) introduction to the various Python tools and ML concepts
 
         https://www.youtube.com/playlist?list=PLOU2XLYxmsIIuiBfYad6rFYQU_jL2ryal
 
-1. [Machine Learning Recipes #1](./Hello World/)
+1. [Machine Learning Recipes #1](./Hello_World/)
 2. [Machine Learning Recipes #2](./Iris/)
