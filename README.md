@@ -126,7 +126,8 @@ This series is from mid-2016 so there is a small amount of 'code rot', plus it s
 Python 2 rather than Python 3, but even so it's a quick and fun way to get a brief overview
 of ML and the tools & techniques involved.
 
-1. [Machine Learning Recipes #1](./Hello_World/)
-2. [Machine Learning Recipes #2](./Iris/)
-3. [Machine Learning Recipes #3](./Features/)
-4. [Machine Learning Recipes #4](./Pipeline/)
+[Machine Learning Recipes #1](./Hello_World/)
+[Machine Learning Recipes #2](./Iris/)
+[Machine Learning Recipes #3](./Features/)
+[Machine Learning Recipes #4](./Pipeline/)
+[Machine Learning Recipes #5](./Custom_Classifier/)
