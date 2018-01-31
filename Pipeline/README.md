@@ -1,0 +1,45 @@
+# Features - Machine Learning Recipes #4
+
+Evaluating and comparing classifiers with `sklearn` convenience methods.
+
+[Classifiers can be very easily swapped in or out.]
+
+## Execution
+
+To run, type the following:
+
+    python pipeline.py
+
+There can be a certain amount of randomness to `sklearn.metrics.accuracy_score` as follows:
+
+    $ python pipeline.py 
+    Prediction accuracy: 0.946666666667
+    $ python pipeline.py 
+    Prediction accuracy: 0.96
+    $ python pipeline.py 
+    Prediction accuracy: 0.96
+    $ python pipeline.py 
+    Prediction accuracy: 0.946666666667
+    $
+
+[This randomness is apparently due to the way test/training data is partitioned.]
+
+The above results were for `sklearn.tree.DecisionTreeClassifier`.
+
+Here are some results from `sklearn.neighbors.DecisionTreeClassifier`:
+
+    $ python pipeline.py 
+    Prediction accuracy: 0.96
+    $ python pipeline.py 
+    Prediction accuracy: 0.96
+    $ python pipeline.py 
+    Prediction accuracy: 0.946666666667
+    $ python pipeline.py 
+    Prediction accuracy: 0.946666666667
+    $
+
+[The two classifiers seem to be producing the same accuracy, so no clear winner.]
+
+## Credits
+
+    https://www.youtube.com/watch?v=84gqSbLcBFE
