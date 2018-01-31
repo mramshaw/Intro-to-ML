@@ -26,7 +26,7 @@ There can be a certain amount of randomness to `sklearn.metrics.accuracy_score` 
 
 The above results were for `sklearn.tree.DecisionTreeClassifier`.
 
-Here are some results from `sklearn.neighbors.DecisionTreeClassifier`:
+Here are some results from `sklearn.neighbors.KNeighborsClassifier`:
 
     $ python pipeline.py 
     Prediction accuracy: 0.96
