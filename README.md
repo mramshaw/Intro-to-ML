@@ -69,11 +69,17 @@ Useful optional libraries include:
 
 Verify library presence and version with `pip` as with `scikit-learn`:
 
-        pip list --format=legacy | grep numpy
+    pip list --format=legacy | grep numpy
 
 [Replace `numpy` above as necessary.]
 
-Or use `try_import.py` as shown:
+Or verify library presence and version with Python:
+
+    python -c "import numpy as im; print(im.__version__)"
+
+[Likewise replace `numpy` above as necessary.]
+
+Or use `try_import.py` for multiple libraries as shown:
 
     $ python try_import.py numpy scipy sklearn keras
     "numpy" was imported
@@ -126,8 +132,9 @@ This series is from mid-2016 so there is a small amount of 'code rot', plus it s
 Python 2 rather than Python 3, but even so it's a quick and fun way to get a brief overview
 of ML and the tools & techniques involved.
 
-[Machine Learning Recipes #1](./Hello_World/)
-[Machine Learning Recipes #2](./Iris/)
-[Machine Learning Recipes #3](./Features/)
-[Machine Learning Recipes #4](./Pipeline/)
-[Machine Learning Recipes #5](./Custom_Classifier/)
+* [Machine Learning Recipes #1](./Hello_World/)
+* [Machine Learning Recipes #2](./Iris/)
+* [Machine Learning Recipes #3](./Features/)
+* [Machine Learning Recipes #4](./Pipeline/)
+* [Machine Learning Recipes #5](./Custom_Classifier/)
+* [Machine Learning Recipes #6](./Image_Classifier/)
