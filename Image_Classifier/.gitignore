@@ -1,5 +1,11 @@
-flower_photos.tgz
+bottlenecks/
+daisy.jpg
 flower_photos/
-
+flower_photos.tgz
+label_image.py
+models/
+retrained_graph.pb
+retrained_labels.txt
 retrain.py
 retrain.py.orig
+training_summaries/

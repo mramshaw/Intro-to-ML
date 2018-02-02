@@ -105,9 +105,160 @@ Once you have fixed (or not) any quantization issues, you should be presented wi
 
 ## Execution
 
-To run, type the following:
+#### TensorBoard
 
-    python [tbd]
+In a console window, launch `TensorBoard`:
+
+    $ tensorboard --logdir training_summaries
+
+This will open a dashboard that is available at:
+
+    http://localhost:6006/
+
+#### Training
+
+In a new console, type the following:
+
+    $ IMAGE_SIZE=224
+    $ ARCHITECTURE="mobilenet_0.50_${IMAGE_SIZE}"
+    $ date && python retrain.py \
+      --bottleneck_dir=bottlenecks \
+      --how_many_training_steps=500 \
+      --model_dir=models/ \
+      --summaries_dir=training_summaries/"${ARCHITECTURE}" \
+      --output_graph=retrained_graph.pb \
+      --output_labels=retrained_labels.txt \
+      --architecture="${ARCHITECTURE}" \
+      --image_dir=flower_photos && date
+
+The results (first run) should look something like:
+
+    Thu Feb  1 15:08:26 PST 2018
+    >> Downloading mobilenet_v1_0.50_224_frozen.tgz 100.1%
+    Extracting file from  models/mobilenet_v1_0.50_224_frozen.tgz
+    Model path:  models/mobilenet_v1_0.50_224/frozen_graph.pb
+    INFO:tensorflow:Looking for images in 'sunflowers'
+    INFO:tensorflow:Looking for images in 'dandelion'
+    INFO:tensorflow:Looking for images in 'roses'
+    INFO:tensorflow:Looking for images in 'tulips'
+    INFO:tensorflow:Looking for images in 'daisy'
+    ....
+    INFO:tensorflow:Creating bottleneck at bottlenecks/tulips/490541142_c37e2b4191_n.jpg_mobilenet_0.50_224.txt
+    INFO:tensorflow:Creating bottleneck at bottlenecks/tulips/303858799_942b9c09e7_m.jpg_mobilenet_0.50_224.txt
+    ....
+    INFO:tensorflow:2018-02-01 15:10:27.293320: Step 499: Cross entropy = 0.104326
+    INFO:tensorflow:2018-02-01 15:10:27.314535: Step 499: Validation accuracy = 85.0% (N=100)
+    INFO:tensorflow:Final test accuracy = 87.0% (N=353)
+    INFO:tensorflow:Froze 2 variables.
+    Converted 2 variables to const ops.
+    Thu Feb  1 15:10:27 PST 2018
+    $
+
+Note that this first run downloaded `mobilenet_v1_0.50_224_frozen.tgz` (which will be available on subsequent runs).
+
+[On my machine all of this took ~2 minutes to execute, which seems suspiciously fast.]
+
+According to the __TensorFlow for Poets__ notes:
+
+> This script downloads the pre-trained model, adds a new final layer,
+>  and trains that layer on the flower photos you've downloaded.
+
+A second run should look like:
+
+	Thu Feb  1 16:02:15 PST 2018
+	Not extracting or downloading files, model already present in disk
+	Model path:  models/mobilenet_v1_0.50_224/frozen_graph.pb
+	INFO:tensorflow:Looking for images in 'sunflowers'
+	INFO:tensorflow:Looking for images in 'dandelion'
+	INFO:tensorflow:Looking for images in 'roses'
+	INFO:tensorflow:Looking for images in 'tulips'
+	INFO:tensorflow:Looking for images in 'daisy'
+	....
+	INFO:tensorflow:2018-02-01 16:02:29.371780: Step 499: Validation accuracy = 88.0% (N=100)
+	INFO:tensorflow:Final test accuracy = 87.8% (N=353)
+	INFO:tensorflow:Froze 2 variables.
+	Converted 2 variables to const ops.
+	Thu Feb  1 16:02:29 PST 2018
+	$
+
+[Now less than a minute to execute, suspicious.]
+
+The way to switch to switch to the slower Inception model (which is the default) is to NOT
+use the `architecture` tag:
+
+    $ date && python retrain.py \
+      --bottleneck_dir=bottlenecks \
+      --how_many_training_steps=500 \
+      --model_dir=models/ \
+      --summaries_dir=training_summaries/"${ARCHITECTURE}" \
+      --output_graph=retrained_graph.pb \
+      --output_labels=retrained_labels.txt \
+      --image_dir=flower_photos && date
+
+The first run should look like:
+
+    Thu Feb  1 16:33:11 PST 2018
+    >> Downloading inception-2015-12-05.tgz 100.0%
+    Extracting file from  models/inception-2015-12-05.tgz
+    Model path:  models/classify_image_graph_def.pb
+    INFO:tensorflow:Looking for images in 'sunflowers'
+    INFO:tensorflow:Looking for images in 'dandelion'
+    INFO:tensorflow:Looking for images in 'roses'
+    INFO:tensorflow:Looking for images in 'tulips'
+    INFO:tensorflow:Looking for images in 'daisy'
+    ....
+    INFO:tensorflow:2018-02-01 16:48:14.265575: Step 499: Validation accuracy = 90.0% (N=100)
+    INFO:tensorflow:Final test accuracy = 90.4% (N=353)
+    INFO:tensorflow:Froze 2 variables.
+    Converted 2 variables to const ops.
+    Thu Feb  1 16:48:14 PST 2018
+
+[So about 15 minutes.]
+
+The second run should look like:
+
+    Thu Feb  1 16:52:49 PST 2018
+    Not extracting or downloading files, model already present in disk
+    Model path:  models/classify_image_graph_def.pb
+    ....
+    INFO:tensorflow:2018-02-01 16:53:16.729520: Step 499: Train accuracy = 84.0%
+    INFO:tensorflow:2018-02-01 16:53:16.729645: Step 499: Cross entropy = 0.479270
+    INFO:tensorflow:2018-02-01 16:53:16.771593: Step 499: Validation accuracy = 90.0% (N=100)
+    INFO:tensorflow:Final test accuracy = 89.5% (N=353)
+    INFO:tensorflow:Froze 2 variables.
+    Converted 2 variables to const ops.
+    Thu Feb  1 16:53:17 PST 2018
+    $
+
+#### Labelling
+
+Either use the training console or open a new console and type the following:
+
+    $ IMAGE_SIZE=224
+
+Then run `label_image` as follows:
+
+    $ python label_image.py \
+        --graph=retrained_graph.pb \
+        --labels=retrained_labels.txt \
+        --output_layer=MobilenetV1/Predictions/Reshape \
+        --image=daisy.jpg
+
+    $ diff -uw label_image.py.orig label_image.py
+    --- label_image.py.orig	2018-02-01 15:27:25.413835000 -0800
+    +++ label_image.py	2018-02-01 17:11:10.396034292 -0800
+    @@ -82,8 +82,8 @@
+       input_width = 299
+       input_mean = 0
+       input_std = 255
+    -  input_layer = "input"
+    -  output_layer = "InceptionV3/Predictions/Reshape_1"
+    +  input_layer = "Mul"
+    +  output_layer = "final result"
+     
+       parser = argparse.ArgumentParser()
+       parser.add_argument("--image", help="image to be processed")
+    $
 
 ## Credits
 
