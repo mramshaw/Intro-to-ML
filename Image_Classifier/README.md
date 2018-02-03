@@ -4,7 +4,14 @@ Evaluating images with [TensorFlow](https://www.tensorflow.org/).
 
 [The recommendation is to have ~100 images per image category.]
 
-For more details, refer to the [TensorFlow for Poets codelab](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#0).
+For more details, refer to the
+[TensorFlow for Poets](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#0) codelab.
+
+For the __Mobile__ version, refer to the
+[TensorFlow for Poets 2: Optimize for Mobile](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets-2/#0) codelab.
+
+For the more recent __Mobile TFLite__ version, refer to the
+[TensorFlow for Poets 2: TFLite](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets-2-tflite/#0) codelab.
 
 __tl;dr__ The __TensorFlow__ (tf) components are pluggable and can be swapped-in, like __Scikit-Learn__ (sklearn) components.
 
@@ -214,6 +221,7 @@ The first run should look like:
     INFO:tensorflow:Froze 2 variables.
     Converted 2 variables to const ops.
     Thu Feb  1 16:48:14 PST 2018
+    $
 
 [About 15 minutes.]
 
