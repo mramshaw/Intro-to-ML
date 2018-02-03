@@ -2,6 +2,10 @@
 
 Evaluating images with [TensorFlow](https://www.tensorflow.org/).
 
+![Target](./target.png)
+
+In this exercise we will try to replicate the above results.
+
 [The recommendation is to have ~100 images per image category.]
 
 For more details, refer to the
@@ -12,6 +16,9 @@ For the __Mobile__ version, refer to the
 
 For the more recent __Mobile TFLite__ version, refer to the
 [TensorFlow for Poets 2: TFLite](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets-2-tflite/#0) codelab.
+
+For an alternative version, refer to the
+[TensorFlow Retraining](https://www.tensorflow.org/versions/master/tutorials/image_retraining) version.
 
 __tl;dr__ The __TensorFlow__ (tf) components are pluggable and can be swapped-in, like __Scikit-Learn__ (sklearn) components.
 
@@ -111,6 +118,11 @@ If you wish to compile `quant_ops` it is available from the following
 Once you have fixed (or not) any quantization issues, you should be presented with voluminous help.
 
 ## Execution
+
+There are two different models, different image sizes, and two stepping options available.
+
+The plan is to start with the first model (MobileNet) and proceed to the second (Inception) if
+the upgrade can be made without an unacceptable loss in execution time (and on my machine it can).
 
 #### TensorBoard
 
