@@ -115,7 +115,7 @@ This will open a dashboard that is available at:
 
     http://localhost:6006/
 
-#### Training
+#### MobileNet Training
 
 In a new console, type the following:
 
@@ -183,8 +183,10 @@ A second run should look like:
 
 [Now less than a minute to execute, suspicious.]
 
-The way to switch to switch to the slower Inception model (which is the default) is to NOT
-use the `architecture` tag:
+#### Inception Training
+
+The way to switch to the slower but more accurate Inception model (which is the default) is to
+NOT use the `--architecture` tag:
 
     $ date && python retrain.py \
       --bottleneck_dir=bottlenecks \
@@ -213,7 +215,7 @@ The first run should look like:
     Converted 2 variables to const ops.
     Thu Feb  1 16:48:14 PST 2018
 
-[So about 15 minutes.]
+[About 15 minutes.]
 
 The second run should look like:
 
@@ -229,6 +231,8 @@ The second run should look like:
     Converted 2 variables to const ops.
     Thu Feb  1 16:53:17 PST 2018
     $
+
+[Less than a minute.]
 
 #### Labelling
 
