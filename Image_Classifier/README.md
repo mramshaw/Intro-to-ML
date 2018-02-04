@@ -2,7 +2,7 @@
 
 Evaluating images with [TensorFlow](https://www.tensorflow.org/).
 
-![Target](./target.png)
+![Target](./target_label.png)
 
 In this exercise we will try to replicate the above results.
 
