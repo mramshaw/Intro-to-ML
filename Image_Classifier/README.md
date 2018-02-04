@@ -38,7 +38,8 @@ You should probably upgrade TensorBoard as well:
 
 #### Familiarization
 
-We will need `retrain.py`. If you have not cloned the `TensorFlow for Poets` Git repo, it is available from the
+We will need `retrain.py`. If you have not cloned the
+[TensorFlow for Poets repo](https://github.com/googlecodelabs/tensorflow-for-poets-2), it is available from the
 [TensorFlow repo](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/image_retraining/retrain.py).
 
 As recommended, start off by running `retrain` to read (and hopefully understand) the help messages:
@@ -206,6 +207,13 @@ A second run should look like:
 
 #### Inception Training
 
+In a new console, type the following:
+
+    $ IMAGE_SIZE=224
+    $ ARCHITECTURE="inception_v3_0.50_${IMAGE_SIZE}"
+
+[This way we are comparing the same image size and model size as with MobileNet.]
+
 The way to switch to the slower but more accurate Inception model (which is the default) is to
 OMIT the `--architecture` tag:
 
@@ -256,9 +264,12 @@ The second run should look like:
 
 [Less than a minute.]
 
+Note that - at the cost of some execution time - this model is ~90% accurate, as contrasted with ~87.4% for MobileNet.
+
 ## Labelling
 
-We will need `label_image.py`. If you have not cloned the `TensorFlow for Poets` Git repo, it is available from the
+We will need `label_image.py`. If you have not cloned the
+[TensorFlow for Poets repo](https://github.com/googlecodelabs/tensorflow-for-poets-2), it is available from the
 [TensorFlow repo](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/label_image/label_image.py).
 
 Be prepared for the following stack trace, which indicates that an input or an output layer
@@ -283,47 +294,56 @@ Either use the training console or open a new console and type the following:
 
 Run `label_image` as follows (note the `--input_height` and `--input_width` parameters):
 
-python label_image.py \
---graph=retrained_graph.pb --labels=retrained_labels.txt \
---input_layer=input \
---output_layer=final_result \
---input_height=${IMAGE_SIZE} \
---input_width=${IMAGE_SIZE} \
---input_mean=128 --input_std=128 \
---image=flower_photos/daisy/21652746_cc379e0eea_m.jpg
+    $ python label_image.py \
+        --graph=retrained_graph.pb --labels=retrained_labels.txt \
+        --input_layer=input \
+        --output_layer=final_result \
+        --input_height=${IMAGE_SIZE} \
+        --input_width=${IMAGE_SIZE} \
+        --input_mean=128 --input_std=128 \
+        --image=flower_photos/daisy/21652746_cc379e0eea_m.jpg
+
+Failing to specify the `--input_height` and `--input_width` parameters will result in a stack trace like the following:
+
+    Traceback (most recent call last):
+      File "label_image.py", line 134, in <module>
+        input_operation.outputs[0]: t
+      File "/home/owner/.local/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 895, in run
+        run_metadata_ptr)
+      File "/home/owner/.local/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 1104, in _run
+        % (np_val.shape, subfeed_t.name, str(subfeed_t.get_shape())))
+    ValueError: Cannot feed value of shape (1, 299, 299, 3) for Tensor u'import/input:0', which has shape '(1, 224, 224, 3)'
+
+The results should look as follows:
+
+    daisy 0.9931763
+    dandelion 0.004730663
+    sunflowers 0.0020874038
+    roses 5.105141e-06
+    tulips 6.3175827e-07
+
+Which is pretty close to what we are aiming for, bearing in mind this model is ~87.4% accurate.
 
 #### Inception Labelling
 
 Run `label_image` as follows (note the `--input_height` and `--input_width` parameters are not needed):
 
-python label_image.py \
---graph=retrained_graph.pb --labels=retrained_labels.txt \
---input_layer=Mul \
---output_layer=final_result \
---input_mean=128 --input_std=128 \
---image=flower_photos/daisy/21652746_cc379e0eea_m.jpg
-
     $ python label_image.py \
-        --graph=retrained_graph.pb \
-        --labels=retrained_labels.txt \
-        --output_layer=MobilenetV1/Predictions/Reshape \
-        --image=daisy.jpg
+        --graph=retrained_graph.pb --labels=retrained_labels.txt \
+        --input_layer=Mul \
+        --output_layer=final_result \
+        --input_mean=128 --input_std=128 \
+        --image=flower_photos/daisy/21652746_cc379e0eea_m.jpg
 
-    $ diff -uw label_image.py.orig label_image.py
-    --- label_image.py.orig	2018-02-01 15:27:25.413835000 -0800
-    +++ label_image.py	2018-02-01 17:11:10.396034292 -0800
-    @@ -82,8 +82,8 @@
-       input_width = 299
-       input_mean = 0
-       input_std = 255
-    -  input_layer = "input"
-    -  output_layer = "InceptionV3/Predictions/Reshape_1"
-    +  input_layer = "Mul"
-    +  output_layer = "final result"
-     
-       parser = argparse.ArgumentParser()
-       parser.add_argument("--image", help="image to be processed")
-    $
+The results should look as follows:
+
+    daisy 0.9878885
+    sunflowers 0.009602106
+    dandelion 0.0017036144
+    tulips 0.000752518
+    roses 5.3251228e-05
+
+Very much the same as the MobileNet results!
 
 ## Credits
 
