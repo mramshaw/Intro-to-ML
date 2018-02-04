@@ -17,7 +17,7 @@ For the __Mobile__ version, refer to the
 For the more recent __Mobile TFLite__ version, refer to the
 [TensorFlow for Poets 2: TFLite](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets-2-tflite/#0) codelab.
 
-For an alternative version, refer to the
+For even more details, refer to the
 [TensorFlow Retraining](https://www.tensorflow.org/versions/master/tutorials/image_retraining) version.
 
 __tl;dr__ The __TensorFlow__ (tf) components are pluggable and can be swapped-in, like __Scikit-Learn__ (sklearn) components.
@@ -117,7 +117,7 @@ If you wish to compile `quant_ops` it is available from the
 
 Once you have fixed (or not) any quantization issues, you should be presented with voluminous help.
 
-## Execution
+## Training
 
 There are two different models, four image sizes (we will use the largest: 224), four different
 model sizes (we will use 50% as recommended) and two stepping options available (we will use the
@@ -207,7 +207,7 @@ A second run should look like:
 #### Inception Training
 
 The way to switch to the slower but more accurate Inception model (which is the default) is to
-NOT use the `--architecture` tag:
+OMIT the `--architecture` tag:
 
     $ date && python retrain.py \
       --bottleneck_dir=bottlenecks \
@@ -256,16 +256,52 @@ The second run should look like:
 
 [Less than a minute.]
 
-#### Labelling
+## Labelling
 
 We will need `label_image.py`. If you have not cloned the `TensorFlow for Poets` Git repo, it is available from the
 [TensorFlow repo](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/label_image/label_image.py).
+
+Be prepared for the following stack trace, which indicates that an input or an output layer
+has been incorrectly specified:
+
+    Traceback (most recent call last):
+      File "label_image.py", line 129, in <module>
+        input_operation = graph.get_operation_by_name(input_name)
+      File "/home/owner/.local/lib/python2.7/site-packages/tensorflow/python/framework/ops.py", line 3451, in get_operation_by_name
+        return self.as_graph_element(name, allow_tensor=False, allow_operation=True)
+      File "/home/owner/.local/lib/python2.7/site-packages/tensorflow/python/framework/ops.py", line 3323, in as_graph_element
+        return self._as_graph_element_locked(obj, allow_tensor, allow_operation)
+      File "/home/owner/.local/lib/python2.7/site-packages/tensorflow/python/framework/ops.py", line 3383, in _as_graph_element_locked
+        "graph." % repr(name))
+    KeyError: "The name 'import/input' refers to an Operation not in the graph."
 
 Either use the training console or open a new console and type the following:
 
     $ IMAGE_SIZE=224
 
-Then run `label_image` as follows:
+#### MobileNet Labelling
+
+Run `label_image` as follows (note the `--input_height` and `--input_width` parameters):
+
+python label_image.py \
+--graph=retrained_graph.pb --labels=retrained_labels.txt \
+--input_layer=input \
+--output_layer=final_result \
+--input_height=${IMAGE_SIZE} \
+--input_width=${IMAGE_SIZE} \
+--input_mean=128 --input_std=128 \
+--image=flower_photos/daisy/21652746_cc379e0eea_m.jpg
+
+#### Inception Labelling
+
+Run `label_image` as follows (note the `--input_height` and `--input_width` parameters are not needed):
+
+python label_image.py \
+--graph=retrained_graph.pb --labels=retrained_labels.txt \
+--input_layer=Mul \
+--output_layer=final_result \
+--input_mean=128 --input_std=128 \
+--image=flower_photos/daisy/21652746_cc379e0eea_m.jpg
 
     $ python label_image.py \
         --graph=retrained_graph.pb \
