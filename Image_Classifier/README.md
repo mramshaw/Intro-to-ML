@@ -38,8 +38,8 @@ You should probably upgrade TensorBoard as well:
 
 #### Familiarization
 
-We will need `retrain.py`. If you have not cloned the Git repo, it is available at the following
-[link](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/image_retraining/retrain.py).
+We will need `retrain.py`. If you have not cloned the `TensorFlow for Poets` Git repo, it is available from the
+[TensorFlow repo](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/image_retraining/retrain.py).
 
 As recommended, start off by running `retrain` to read (and hopefully understand) the help messages:
 
@@ -112,17 +112,19 @@ does not actually use the troublesome quantization (it recommends `mobilenet_0.5
 
 [My read on things is that quantization involves using 8-bit operations instead of floating-point.]
 
-If you wish to compile `quant_ops` it is available from the following
-[link](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/contrib/quantize/python/quant_ops.py).
+If you wish to compile `quant_ops` it is available from the
+[TensorFlow repo](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/contrib/quantize/python/quant_ops.py).
 
 Once you have fixed (or not) any quantization issues, you should be presented with voluminous help.
 
 ## Execution
 
-There are two different models, different image sizes, and two stepping options available.
+There are two different models, four image sizes (we will use the largest: 224), four different
+model sizes (we will use 50% as recommended) and two stepping options available (we will use the
+smaller stepping [500] as recommended).
 
 The plan is to start with the first model (MobileNet) and proceed to the second (Inception) if
-the upgrade can be made without an unacceptable loss in execution time (and on my machine it can).
+the upgrade can be made without an unacceptable loss in execution time (on my machine it can).
 
 #### TensorBoard
 
@@ -255,6 +257,9 @@ The second run should look like:
 [Less than a minute.]
 
 #### Labelling
+
+We will need `label_image.py`. If you have not cloned the `TensorFlow for Poets` Git repo, it is available from the
+[TensorFlow repo](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/label_image/label_image.py).
 
 Either use the training console or open a new console and type the following:
 
