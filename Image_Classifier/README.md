@@ -264,7 +264,51 @@ The second run should look like:
 
 [Less than a minute.]
 
-Note that - at the cost of some execution time - this model is ~90% accurate, as contrasted with ~87.4% for MobileNet.
+Let's try without the `bottlenecks` (the term is used, if I have understood correctly,
+to describe the final hidden layer of neurons, which are written to disk as a quick
+set of checkmarks) by omitting the `--bottleneck_dir=bottlenecks` parameter:
+
+    $ date && python retrain.py \
+      --how_many_training_steps=500 \
+      --model_dir=models/ \
+      --summaries_dir=training_summaries/"${ARCHITECTURE}" \
+      --output_graph=retrained_graph.pb \
+      --output_labels=retrained_labels.txt \
+      --image_dir=flower_photos && date
+
+No, it seems that all of this disk activity cannot be avoided: if the `bottleneck_dir`
+parameter is omitted, the checkmark files are written to the __/tmp__ file directory:
+
+    INFO:tensorflow:Creating bottleneck at /tmp/bottleneck/tulips/490541142_c37e2b4191_n.jpg_inception_v3.txt
+
+The results should look like:
+
+    Sun Feb  4 11:08:52 PST 2018
+    Not extracting or downloading files, model already present in disk
+    Model path:  models/classify_image_graph_def.pb
+    INFO:tensorflow:Looking for images in 'sunflowers'
+    INFO:tensorflow:Looking for images in 'dandelion'
+    INFO:tensorflow:Looking for images in 'roses'
+    INFO:tensorflow:Looking for images in 'tulips'
+    INFO:tensorflow:Looking for images in 'daisy'
+    INFO:tensorflow:Creating bottleneck at /tmp/bottleneck/tulips/490541142_c37e2b4191_n.jpg_inception_v3.txt
+    ....
+    INFO:tensorflow:2018-02-04 11:19:19.822527: Step 499: Train accuracy = 85.0%
+    INFO:tensorflow:2018-02-04 11:19:19.822650: Step 499: Cross entropy = 0.401846
+    INFO:tensorflow:2018-02-04 11:19:19.863837: Step 499: Validation accuracy = 85.0% (N=100)
+    INFO:tensorflow:Final test accuracy = 90.7% (N=353)
+    INFO:tensorflow:Froze 2 variables.
+    Converted 2 variables to const ops.
+    Sun Feb  4 11:19:20 PST 2018
+    $
+
+[This time ~10.5 minutes; from the first run we know that it takes ~3.5 minutes to download & extract the Inception model.
+From the previous run we know calculating the final layer takes ~0.5 minutes; this means it takes ~10 minutes to calculate
+the bottlenecks (and write them to disk). It should probably be standard practice to delete the `bottlenecks` directory
+after a clean run so that things start from scratch again on the next run - i.e. when we want to re-calculate the
+___bottlenecks___ (note that this is a very unusual way to use this particular term).]
+
+Note that - at the cost of some execution time - this Inception model is ~90% accurate, as contrasted with ~87.4% for MobileNet.
 
 ## Labelling
 
