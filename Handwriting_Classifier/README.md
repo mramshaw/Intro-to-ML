@@ -6,6 +6,8 @@ This video specifically deals with the [Docker](https://hub.docker.com/r/tensorf
 
 Note that, for GPU-based TensorFlow, there is also an [nvidia-docker](https://github.com/NVIDIA/nvidia-docker) option.
 
+For more information, refer to the [TensorFlow layers](https://www.tensorflow.org/tutorials/layers) tutorial.
+
 ## MNIST Data
 
 Run the following Python code to download the [MNIST dataset](http://yann.lecun.com/exdb/mnist/):
