@@ -5,10 +5,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 import tensorflow as tf
-
-learn = tf.contrib.learn
 # tf.logging.set_verbosity(tf.logging.INFO)
 tf.logging.set_verbosity(tf.logging.ERROR)
+
+learn = tf.contrib.learn
 
 mnist = learn.datasets.load_dataset('mnist')
 data = mnist.train.images       # 55k
@@ -23,15 +23,21 @@ test_labels = np.asarray(mnist.test.labels, dtype=np.int32)
 
 # Now lets visualize some of the data
 
-def display(i):
+def label_display(i):
     img = test_data[i]
-    plt.title('Example {} Label {}'.format(i, test_labels[i]))
+    plt.title('Example {} - Label {}'.format(i, test_labels[i]))
     plt.imshow(img.reshape((28, 28)), cmap=plt.cm.gray_r)
     plt.show()
 
-display(0)
-display(1)
-display(8)
+def predicted_display(i, predicted, labelled, message):
+    img = test_data[i]
+    plt.title('Prediction {} - Label {} = {}'.format(predicted, labelled, message))
+    plt.imshow(img.reshape((28, 28)), cmap=plt.cm.gray_r)
+    plt.show()
+
+label_display(0)
+label_display(1)
+label_display(8)
 
 # The number of elements in each datapoint
 print 'Features of each image (28x28) = {}'.format(len(data[0]))
@@ -43,13 +49,15 @@ classifier.fit(data, labels, batch_size=100, steps=1000)
 classifier.evaluate(test_data, test_labels)
 print 'Accuracy = {}'.format(classifier.evaluate(test_data, test_labels)["accuracy"])
 
-print 'Predicted {}, Label: {}'.format(classifier.predict(test_data[0]), test_labels[0])
-display(0)
+# Now lets visualize some of the predictions
 
-print 'Predicted {}, Label: {}'.format(classifier.predict(test_data[8]), test_labels[8])
-display(8)
+# print 'Predicted {}, Label: {}'.format(classifier.predict(test_data[0]), test_labels[0])
+predicted_display(0, classifier.predict(np.array([test_data[0]], dtype=float), as_iterable=False), test_labels[0], 'CORRECT!')
 
-weights = classifier.weights_
+# print 'Predicted {}, Label: {}'.format(classifier.predict(test_data[8]), test_labels[8])
+predicted_display(8, classifier.predict(np.array([test_data[8]], dtype=float), as_iterable=False), test_labels[8], 'WRONG!')
+
+weights = classifier.get_variable_value('linear//weight')
 f, axes = plt.subplots(2, 5, figsize=(10,4))
 axes = axes.reshape(-1)
 for i in range(len(axes)):
