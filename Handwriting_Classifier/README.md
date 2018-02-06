@@ -4,9 +4,11 @@
 
 There are a wide variety of installation options for [TensorFlow](https://www.tensorflow.org/install/).
 
-This video specifically deals with the [Docker](https://hub.docker.com/r/tensorflow/tensorflow/) option.
+While the video deals with the [Docker](https://hub.docker.com/r/tensorflow/tensorflow/) option, this exercise uses the local `pip` option.
 
 Note that, for GPU-based TensorFlow, there is also an [nvidia-docker](https://github.com/NVIDIA/nvidia-docker) option.
+
+There is a very useful [Jupyter notebook](https://github.com/random-forests/tutorials/blob/master/ep7.ipynb), which is definitely worth a look.
 
 For more information, refer to the [TensorFlow layers](https://www.tensorflow.org/tutorials/layers) tutorial.
 
