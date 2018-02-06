@@ -4,7 +4,7 @@
 
 There are a wide variety of installation options for [TensorFlow](https://www.tensorflow.org/install/).
 
-While the video deals with the [Docker](https://hub.docker.com/r/tensorflow/tensorflow/) option, this exercise uses the local `pip` option.
+While the video deals with the [Docker](https://hub.docker.com/r/tensorflow/tensorflow/) option, this exercise uses the `pip` option - updated for __TensorFlow 1.5.0__.
 
 Note that, for GPU-based TensorFlow, there is also an [nvidia-docker](https://github.com/NVIDIA/nvidia-docker) option.
 
@@ -58,6 +58,8 @@ The results should look as follows:
 
 Note that the accuracy slightly exceeds the 0.9141 we were looking for.
 
+Of course, to get more accurate results there is [Deep MNIST](https://www.tensorflow.org/versions/r1.0/get_started/mnist/pros) - which is supposed to give 99% accuracy.
+
 #### Visualization
 
 The visualized graphics were as follows:
@@ -75,6 +77,10 @@ The prediction results were as follows:
 ![Correctly_Predicted](images/Figure_4.png)
 
 ![Incorrectly_Predicted](images/Figure_5.png)
+
+#### Final Results
+
+For a nice explanation of the final visualization, watch the following [link](https://youtu.be/Gj0iyo265bc?list=PLOU2XLYxmsIIuiBfYad6rFYQU_jL2ryal&t=340).
 
 ## Credits
 
