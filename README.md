@@ -139,3 +139,4 @@ of ML and the tools & techniques involved.
 * [Machine Learning Recipes #5](./Custom_Classifier/)
 * [Machine Learning Recipes #6](./Image_Classifier/)
 * [Machine Learning Recipes #7](./Handwriting_Classifier/)
+* [Machine Learning Recipes #8](./Decision_Tree/)
