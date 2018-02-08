@@ -310,6 +310,86 @@ ___bottlenecks___ (note that this is a very unusual way to use this particular t
 
 Note that - at the cost of some execution time - this Inception model is ~90% accurate, as contrasted with ~87.4% for MobileNet.
 
+#### Errors
+
+Specifying the `--print_misclassified_test_images` parameter will result in a list of misclassified images.
+
+Lets try this with the Inception data:
+
+    $ IMAGE_SIZE=224
+    $ ARCHITECTURE="inception_v3_0.50_${IMAGE_SIZE}"
+    $ python retrain.py \
+      --bottleneck_dir=bottlenecks \
+      --how_many_training_steps=500 \
+      --print_misclassified_test_images \
+      --model_dir=models/ \
+      --summaries_dir=training_summaries/"${ARCHITECTURE}" \
+      --output_graph=retrained_graph.pb \
+      --output_labels=retrained_labels.txt \
+      --image_dir=flower_photos
+
+The results should look as follows:
+
+    Not extracting or downloading files, model already present in disk
+    Model path:  models/classify_image_graph_def.pb
+    INFO:tensorflow:Looking for images in 'sunflowers'
+    INFO:tensorflow:Looking for images in 'dandelion'
+    INFO:tensorflow:Looking for images in 'roses'
+    INFO:tensorflow:Looking for images in 'tulips'
+    INFO:tensorflow:Looking for images in 'daisy'
+    ....
+    INFO:tensorflow:2018-02-08 10:31:59.220495: Step 499: Train accuracy = 92.0%
+    INFO:tensorflow:2018-02-08 10:31:59.220635: Step 499: Cross entropy = 0.337584
+    INFO:tensorflow:2018-02-08 10:31:59.262578: Step 499: Validation accuracy = 93.0% (N=100)
+    INFO:tensorflow:Final test accuracy = 90.1% (N=353)
+    INFO:tensorflow:=== MISCLASSIFIED TEST IMAGES ===
+    INFO:tensorflow:                     flower_photos/tulips/14026857634_500d7b41d6_m.jpg  roses
+    INFO:tensorflow:                      flower_photos/tulips/8454707381_453b4862eb_m.jpg  roses
+    INFO:tensorflow:                     flower_photos/tulips/14009216519_b608321cf2_n.jpg  roses
+    INFO:tensorflow:                       flower_photos/tulips/141479422_5a6fa1fd1b_m.jpg  roses
+    INFO:tensorflow:                        flower_photos/tulips/8757486380_90952c5377.jpg  sunflowers
+    INFO:tensorflow:                      flower_photos/tulips/8454719295_4276c0e9c5_n.jpg  roses
+    INFO:tensorflow:                      flower_photos/tulips/8733586143_3139db6e9e_n.jpg  roses
+    INFO:tensorflow:                      flower_photos/tulips/6267021825_a8316e0dcc_m.jpg  roses
+    INFO:tensorflow:                      flower_photos/tulips/6948277038_89d7ff42e2_m.jpg  roses
+    INFO:tensorflow:                       flower_photos/tulips/122450705_9885fff3c4_n.jpg  roses
+    INFO:tensorflow:                        flower_photos/tulips/7145978709_2d1596f462.jpg  roses
+    INFO:tensorflow:                      flower_photos/roses/17554868955_35f48516cd_m.jpg  tulips
+    INFO:tensorflow:                         flower_photos/roses/9164924345_6b63637acf.jpg  tulips
+    INFO:tensorflow:                       flower_photos/roses/3971662839_5cb2963b20_n.jpg  tulips
+    INFO:tensorflow:                       flower_photos/roses/5060536705_b370a5c543_n.jpg  tulips
+    INFO:tensorflow:                       flower_photos/roses/2535466393_6556afeb2f_m.jpg  tulips
+    INFO:tensorflow:                         flower_photos/roses/3921794817_276eb4386b.jpg  sunflowers
+    INFO:tensorflow:                         flower_photos/roses/9216321995_83df405ea9.jpg  tulips
+    INFO:tensorflow:                      flower_photos/roses/16772483324_09f24813a1_n.jpg  tulips
+    INFO:tensorflow:                       flower_photos/daisy/9244082319_b1f7e2d8b0_n.jpg  dandelion
+    INFO:tensorflow:                        flower_photos/daisy/391364011_5beaaa1ae2_m.jpg  tulips
+    INFO:tensorflow:                         flower_photos/daisy/4563059851_45a9d21a75.jpg  tulips
+    INFO:tensorflow:                       flower_photos/daisy/3494265422_9dba8f2191_n.jpg  sunflowers
+    INFO:tensorflow:                  flower_photos/sunflowers/4528959364_fa544b0f4e_m.jpg  roses
+    INFO:tensorflow:                  flower_photos/sunflowers/5027895361_ace3b731e5_n.jpg  tulips
+    INFO:tensorflow:                 flower_photos/sunflowers/23894449029_bf0f34d35d_n.jpg  dandelion
+    INFO:tensorflow:                   flower_photos/dandelion/7998106328_c3953f70e9_n.jpg  daisy
+    INFO:tensorflow:                    flower_photos/dandelion/146242691_44d9c9d6ce_n.jpg  tulips
+    INFO:tensorflow:                  flower_photos/dandelion/13651218133_b6eb8e7ed2_m.jpg  tulips
+    INFO:tensorflow:                  flower_photos/dandelion/15005530987_e13b328047_n.jpg  sunflowers
+    INFO:tensorflow:                   flower_photos/dandelion/3509307596_6cfe97867d_n.jpg  daisy
+    INFO:tensorflow:                  flower_photos/dandelion/15268682367_5a4512b29f_m.jpg  tulips
+    INFO:tensorflow:                   flower_photos/dandelion/2462379970_6bd5560f4c_m.jpg  sunflowers
+    INFO:tensorflow:                     flower_photos/dandelion/5715788902_9dd2b4ef1d.jpg  sunflowers
+    INFO:tensorflow:                    flower_photos/dandelion/510677438_73e4b91c95_m.jpg  daisy
+    INFO:tensorflow:Froze 2 variables.
+    Converted 2 variables to const ops.
+    $
+
+Now we can examine the images that were mis-classified, perhaps we can spot the reason(s)?
+
+Note that the final column is the (incorrect) label, while the file description includes the folder for the actual flower type.
+
+Only three of the sunflower pictures are mis-classified, so perhaps that is the place to start.
+
+[Having looked at `flower_photos/sunflowers/23894449029_bf0f34d35d_n.jpg` I'm not sure I would do as well as TensorFlow.]
+
 ## Labelling
 
 We will need `label_image.py`. If you have not cloned the
