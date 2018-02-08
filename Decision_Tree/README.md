@@ -51,7 +51,7 @@ I extended the dataset as follows:
     header = ["color", "diameter", "shape", "label"]
 
 [I added the 'shape' feature to distinguish between apples and lemons,
- also a red apple, a green grape, and a green kiwi.]
+ and also a red apple, a green grape, and a green kiwi.]
 
 ## Execution
 
@@ -61,7 +61,7 @@ Run the following command to execute the code:
 
 ## Results
 
-The results should look as follows:
+The initial results should look as follows:
 
     Is diameter >= 3?
     --> True:
@@ -85,6 +85,53 @@ The results should look as follows:
     Actual: Lemon --> Predicted: {'Lemon': '100%'}
     Actual: Kiwi --> Predicted: {'Kiwi': '100%'}
     $
+
+Note that the three features the code has chosen to focus on are as follows:
+
+    Is diameter >= 3?
+      Is shape == Round?
+        Is color == Yellow?
+
+However, if we change the code slightly as follows:
+
+        #   if gain >= best_gain:
+            if gain > best_gain:
+
+Then we get the following results:
+
+    Is diameter >= 3?
+    --> True:
+      Is shape == Oval?
+      --> True:
+        Is color == Green?
+        --> True:
+          Predict {'Kiwi': 1}
+        --> False:
+          Predict {'Lemon': 1}
+      --> False:
+        Predict {'Apple': 3}
+    --> False:
+      Predict {'Grape': 3}
+    Actual: Apple --> Predicted: {'Apple': '100%'}
+    Actual: Apple --> Predicted: {'Apple': '100%'}
+    Actual: Apple --> Predicted: {'Apple': '100%'}
+    Actual: Grape --> Predicted: {'Grape': '100%'}
+    Actual: Grape --> Predicted: {'Grape': '100%'}
+    Actual: Grape --> Predicted: {'Grape': '100%'}
+    Actual: Lemon --> Predicted: {'Lemon': '100%'}
+    Actual: Kiwi --> Predicted: {'Kiwi': '100%'}
+    $
+
+Note that - while the classifications remain the same - the three features the code has
+now chosen to focus on are as follows:
+
+    Is diameter >= 3?
+      Is shape == Oval?
+        Is color == Green?
+
+[The code changed determines the winner in the case of a tie, for instance `Is shape == Oval?`
+ versus `Is shape == Round?`. As might be expected, the difference in the results is not
+ particularly significant, but the method by which they were determined has changed.]
 
 ## Credits
 
