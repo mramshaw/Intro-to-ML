@@ -17,11 +17,25 @@ which seems to be the last part of what looks like an interesting
 
 Introduces ___Bucketing___, ___Crossing___, ___Hashing___, and ___Embedding___.
 
+#### Bucketing
+
 Bucketing (also known as ___Binning___) is a way of segmenting a population, in this case by age.
 If we switch from Row-Based Faceting to the more familiar Column-Based Faceting and set the Age
 variable to 20, we end up with a histogram as follows:
 
 ![Age_Income_Histogram](images/Age_Income_Histogram.png)
+
+If we switch the Positioning from Stacked to Scatter as shown, we get a normalized histogram:
+
+![Age_Income_Normalized](images/Age_Income_Normalized.png)
+
+#### Crossing
+
+"Feature crossing is a way to create new features that are combinations of existing ones,
+ and these can be especially helpful to linear classifiers, which can't model interactions
+ between features."
+
+    https://youtu.be/d12ra3b_M-0?list=PLOU2XLYxmsIIuiBfYad6rFYQU_jL2ryal&t=219
 
 ## Execution
 
