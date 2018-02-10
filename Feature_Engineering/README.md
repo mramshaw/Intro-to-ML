@@ -17,6 +17,12 @@ which seems to be the last part of what looks like an interesting
 
 Introduces ___Bucketing___, ___Crossing___, ___Hashing___, and ___Embedding___.
 
+Bucketing (also known as ___Binning___) is a way of segmenting a population, in this case by age.
+If we switch from Row-Based Faceting to the more familiar Column-Based Faceting and set the Age
+variable to 20, we end up with a histogram as follows:
+
+![Age_Income_Histogram](images/Age_Income_Histogram.png)
+
 ## Execution
 
 To run, type the following:
