@@ -14,7 +14,7 @@ Our starting point is the classifier from [ML #4](../Pipeline/):
 
 So we are looking for results somewhere in the neighbourhood of 96%.
 
-## Random Classifioer
+## Random Classifier
 
 With a random classifier, the prediction accuracy is approximately a third:
 
