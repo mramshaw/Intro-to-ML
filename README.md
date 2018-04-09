@@ -1,5 +1,18 @@
 # Intro to Machine Learning - Pattern Recognition for Fun & Profit
 
+The table of centents is as follows:
+
+* [Overview](#Overview)
+* [Prerequisites](#prerequisites)
+* [scikit-learn](#scikit-learn)
+* [Libraries](#libraries)
+* [requirements.txt](#requirementstxt)
+* [TODO](#todo)
+* [Credits](#credits)
+* [Alternatives](#alternatives)
+* [Data Cleaning](#data-cleaning)
+* [Quick Hits](#quick-hits)
+
 ## Overview
 
 This is a nice free introduction to Machine Learning with Python.
@@ -121,6 +134,22 @@ The following look like interesting options too:
         http://web.stanford.edu/class/cs224n/
 
         http://openclassroom.stanford.edu/MainFolder/CoursePage.php?course=MachineLearning
+
+## Data Cleaning
+
+A ___lot___ (lets say three quarters) of a data scientist's time is spent massaging data.
+Which is a pretty important (lets say _critically_ important) part of a data scientist's
+job and not often discussed.
+
+___Garbage in, garbage out.___
+
+[Not to mention the (very expensive) computer time wasted.]
+
+For a quick introduction, have a look at this great tutorial:
+
+    https://realpython.com/python-data-cleaning-numpy-pandas/
+
+You can see my stab at it [here](https://github.com/mramshaw/Data-Cleaning).
 
 ## Quick Hits
 
