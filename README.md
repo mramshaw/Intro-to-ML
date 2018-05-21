@@ -50,6 +50,11 @@ Chris Manning, Stanford, 3 Apr 2017:
 
         https://youtu.be/OQQ-W_63UgQ?list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6&t=2102
 
+For an explanation of why Python (as contrasted with other languages) is a good choice for __NLP__
+the following link is worth a look:
+
+        http://www.nltk.org/book_1ed/ch00-extras.html
+
 1. Python (either Python 2 or Python 3 - or even __both__)
 
 2. `pip` (if using Python 2) or `pip3` (if using Python 3)
