@@ -12,6 +12,7 @@ The table of centents is as follows:
 * [Alternatives](#alternatives)
 * [Data Cleaning](#data-cleaning)
 * [Quick Hits](#quick-hits)
+* [Tools](#tools)
 
 ## Overview
 
@@ -19,11 +20,16 @@ This is a nice free introduction to Machine Learning with Python.
 
 ![xkcd](https://imgs.xkcd.com/comics/machine_learning.png)
 
-Here is how the folks at [nVidia](https://blogs.nvidia.com/blog/2016/07/29/whats-difference-artificial-intelligence-machine-learning-deep-learning-ai/) see the relationship between Artifical Intelligence, Machine Learning and Deep Learning:
+Here is how the folks at
+[nVidia](https://blogs.nvidia.com/blog/2016/07/29/whats-difference-artificial-intelligence-machine-learning-deep-learning-ai/)
+see the relationship between Artifical Intelligence, Machine Learning and Deep Learning:
 
 ![AI_versus_ML_versus_Deep_Learning](/images/Deep_Learning_Icons_R5_PNG.jpg.png)
 
-Towards the beginning of my career, I was interested in AI and joined a society founded by [Donald Michie](https://www.theguardian.com/science/2007/jul/10/uk.obituaries1) - who was then at the University of Edinburgh. I wonder how much things have progressed since then?
+Towards the beginning of my career, I was interested in AI and joined a society founded
+by [Donald Michie](https://www.theguardian.com/science/2007/jul/10/uk.obituaries1) - who
+was then at the University of Edinburgh. I wonder how much things have progressed since
+then?
 
 Machine Learning is hot right now, and of course the cloud providers have noticed.
 
@@ -48,7 +54,8 @@ Chris Manning, Stanford, 3 Apr 2017:
 
 2. `pip` (if using Python 2) or `pip3` (if using Python 3)
 
-`pip` (or `pip3`) is the Package manager for Python, much as `npm` is the package manager for the Node JavaScript platform.
+`pip` (or `pip3`) is the Package manager for Python, much as `npm` is the package manager
+for the Node JavaScript platform.
 
 ## scikit-learn
 
@@ -145,7 +152,8 @@ ___Garbage in, garbage out.___
 
 [Not to mention the (very expensive) computer time wasted.]
 
-For a quick introduction, have a look at this great tutorial:
+For a quick introduction to data cleaning with `numpy` and `pandas`, have a look at this
+great tutorial:
 
     https://realpython.com/python-data-cleaning-numpy-pandas/
 
@@ -170,3 +178,12 @@ of ML and the tools & techniques involved.
 * [Machine Learning Recipes #7](./Handwriting_Classifier/)
 * [Machine Learning Recipes #8](./Decision_Tree/)
 * [Machine Learning Recipes #9](./Feature_Engineering/)
+* [Machine Learning Recipes #10](./WEKA/)
+
+## Tools
+
+There are a number of tools, such as Python, IPython, and Jupyter Notebooks.
+
+One website that gets a lot of mentions is [Anaconda](https://www.anaconda.com/):
+
+    https://www.anaconda.com/download/
