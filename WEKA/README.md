@@ -6,6 +6,10 @@ WEKA is provided by the University of Waikato. Free courses here:
 
     https://www.cs.waikato.ac.nz/ml/weka/courses.html
 
+It looks like WEKA is a great tool for preliminary investigation of a data set.
+
+Even so, it does seem to offer advanced analytic tools as well.
+
 ## Installation
 
 Download WEKA [here](https://www.cs.waikato.ac.nz/ml/weka/downloading.html)
@@ -30,9 +34,39 @@ as I can remember, this is a Java limitation - without a work-around).
 
 [I like the ___metal___ look and feel the best.]
 
+## Data
+
+Download `datasets-UCI.jar` from this page:
+
+    https://www.cs.waikato.ac.nz/ml/weka/datasets.html
+
+Extract it as follows:
+
+    $ jar xvf datasets-UCI.jar 
+
+Remove the manifest as follows:
+
+    $ rm -rf META-INF/
+
+#### Diabetes
+
+![Diabetes](images/diabetes.png)
+
+Open the `diabetes.arff` file.
+
+[Opening this file with a text editor shows attribution details.]
+
+#### Vote
+
+![Vote](images/vote.png)
+
+Open the `vote.arff` file.
+
+[Here the visualizations make more sense: blue = democrat, red = republican.]
+
 ## TODO
 
-- [ ] Finish watching the video
+- [ ] Fully understand the video
 
 ## Credits
 
