@@ -1,6 +1,6 @@
 # Intro to Machine Learning - Pattern Recognition for Fun & Profit
 
-[![Known Vulnerabilities](https://snyk.io/test/github/mramshaw/Intro-to-ML/badge.svg?style=plastic&targetFile=requirements.txt)](https://snyk.io/test/github/mramshaw/Intro-to-ML?style=plastic&targetFile=requirements.txt)
+[![Known Vulnerabilities](http://snyk.io/test/github/mramshaw/Intro-to-ML/badge.svg?style=plastic&targetFile=requirements.txt)](http://snyk.io/test/github/mramshaw/Intro-to-ML?style=plastic&targetFile=requirements.txt)
 
 The table of contents is as follows:
 
