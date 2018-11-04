@@ -1,6 +1,8 @@
 # Image Classifier (Deep Learning) - Machine Learning Recipes #6
 
-Evaluating images with [TensorFlow](https://www.tensorflow.org/).
+[![Known Vulnerabilities](http://snyk.io/test/github/mramshaw/Intro-to-ML:Image_Classifier/badge.svg?style=plastic&targetFile=requirements.txt)](http://snyk.io/test/github/mramshaw/Intro-to-ML:Image_Classifier?style=plastic&targetFile=requirements.txt)
+
+Evaluating images with [TensorFlow](http://www.tensorflow.org/).
 
 ![Target](./target_label.png)
 
@@ -9,16 +11,16 @@ In this exercise we will try to replicate the above results.
 [The recommendation is to have ~100 images per image category.]
 
 For more details, refer to the
-[TensorFlow for Poets](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#0) codelab.
+[TensorFlow for Poets](http://codelabs.developers.google.com/codelabs/tensorflow-for-poets/#0) codelab.
 
 For the __Mobile__ version, refer to the
-[TensorFlow for Poets 2: Optimize for Mobile](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets-2/#0) codelab.
+[TensorFlow for Poets 2: Optimize for Mobile](http://codelabs.developers.google.com/codelabs/tensorflow-for-poets-2/#0) codelab.
 
 For the more recent __Mobile TFLite__ version, refer to the
-[TensorFlow for Poets 2: TFLite](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets-2-tflite/#0) codelab.
+[TensorFlow for Poets 2: TFLite](http://codelabs.developers.google.com/codelabs/tensorflow-for-poets-2-tflite/#0) codelab.
 
 For even more details, refer to the
-[TensorFlow Retraining](https://www.tensorflow.org/versions/master/tutorials/image_retraining) version.
+[TensorFlow Retraining](http://www.tensorflow.org/versions/master/tutorials/image_retraining) version.
 
 __tl;dr__ The __TensorFlow__ (tf) components are pluggable and can be swapped-in, like __Scikit-Learn__ (sklearn) components.
 
@@ -26,28 +28,26 @@ __tl;dr__ The __TensorFlow__ (tf) components are pluggable and can be swapped-in
 
 #### Installation
 
-Follow this [link](https://www.tensorflow.org/install/) for instructions on installing TensorFlow.
+Follow this [link](http://www.tensorflow.org/install/) for instructions on installing TensorFlow.
 
 If you are using `pip` and already have TensorFlow installed, but wish to upgrade to the latest version:
 
     $ pip install --upgrade --user tensorflow
 
-You should probably upgrade TensorBoard as well:
-
-    $ pip install --upgrade --user tensorflow-tensorboard
+[This should upgrade TensorBoard as well.]
 
 #### Familiarization
 
 We will need `retrain.py`. If you have not cloned the
-[TensorFlow for Poets repo](https://github.com/googlecodelabs/tensorflow-for-poets-2), it is available from the
-[TensorFlow repo](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/image_retraining/retrain.py).
+[TensorFlow for Poets repo](http://github.com/googlecodelabs/tensorflow-for-poets-2), it is available from the
+[TensorFlow repo](http://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/image_retraining/retrain.py).
 
 As recommended, start off by running `retrain` to read (and hopefully understand) the help messages:
 
     $ python retrain.py -h
 
 Depending on the TensorFlow options you have chosen, there may be problems importing `quant_ops`.
-The following [link](https://petewarden.com/2016/05/03/how-to-quantize-neural-networks-with-tensorflow/)
+The following [link](http://petewarden.com/2016/05/03/how-to-quantize-neural-networks-with-tensorflow/)
 may well be very helpful, and is probably worth scanning in any case. But, __TensorFlow for Poets__
 does not actually use the troublesome quantization (it recommends `mobilenet_0.50_224` as opposed to
 `mobilenet_0.50_224_quantized`), so all references to `quant_ops` may safely be commented out (lines
@@ -114,7 +114,7 @@ does not actually use the troublesome quantization (it recommends `mobilenet_0.5
 [My read on things is that quantization involves using 8-bit operations instead of floating-point.]
 
 If you wish to compile `quant_ops` it is available from the
-[TensorFlow repo](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/contrib/quantize/python/quant_ops.py).
+[TensorFlow repo](http://github.com/tensorflow/tensorflow/blob/master/tensorflow/contrib/quantize/python/quant_ops.py).
 
 Once you have fixed (or not) any quantization issues, you should be presented with voluminous help.
 
@@ -393,8 +393,8 @@ Only three of the sunflower pictures are mis-classified, so perhaps that is the 
 ## Labelling
 
 We will need `label_image.py`. If you have not cloned the
-[TensorFlow for Poets repo](https://github.com/googlecodelabs/tensorflow-for-poets-2), it is available from the
-[TensorFlow repo](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/label_image/label_image.py).
+[TensorFlow for Poets repo](http://github.com/googlecodelabs/tensorflow-for-poets-2), it is available from the
+[TensorFlow repo](http://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/label_image/label_image.py).
 
 Be prepared for the following stack trace, which indicates that an input or an output layer
 has been incorrectly specified:
@@ -469,6 +469,10 @@ The results should look as follows:
 
 Very much the same as the MobileNet results!
 
+## TODO
+
+- [x] Update versions to fix Snyk vulnerability alerts
+
 ## Credits
 
-    https://www.youtube.com/watch?v=cSKfRcEDGUs
+    http://www.youtube.com/watch?v=cSKfRcEDGUs

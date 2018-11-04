@@ -1,6 +1,8 @@
 # Intro to Machine Learning - Pattern Recognition for Fun & Profit
 
-The table of centents is as follows:
+[![Known Vulnerabilities](https://snyk.io/test/github/mramshaw/Intro-to-ML/badge.svg?style=plastic&targetFile=requirements.txt)](https://snyk.io/test/github/mramshaw/Intro-to-ML?style=plastic&targetFile=requirements.txt)
+
+The table of contents is as follows:
 
 * [Overview](#Overview)
 * [Prerequisites](#prerequisites)
