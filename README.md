@@ -18,16 +18,16 @@ The table of centents is as follows:
 
 This is a nice free introduction to Machine Learning with Python.
 
-![xkcd](https://imgs.xkcd.com/comics/machine_learning.png)
+![xkcd](http://imgs.xkcd.com/comics/machine_learning.png)
 
 Here is how the folks at
-[nVidia](https://blogs.nvidia.com/blog/2016/07/29/whats-difference-artificial-intelligence-machine-learning-deep-learning-ai/)
+[nVidia](http://blogs.nvidia.com/blog/2016/07/29/whats-difference-artificial-intelligence-machine-learning-deep-learning-ai/)
 see the relationship between Artifical Intelligence, Machine Learning and Deep Learning:
 
 ![AI_versus_ML_versus_Deep_Learning](/images/Deep_Learning_Icons_R5_PNG.jpg.png)
 
 Towards the beginning of my career, I was interested in AI and joined a society founded
-by [Donald Michie](https://www.theguardian.com/science/2007/jul/10/uk.obituaries1) - who
+by [Donald Michie](http://www.theguardian.com/science/2007/jul/10/uk.obituaries1) - who
 was then at the University of Edinburgh. I wonder how much things have progressed since
 then?
 
@@ -35,20 +35,20 @@ Machine Learning is hot right now, and of course the cloud providers have notice
 
 Here is Google's Cloud offering:
 
-        https://cloud.google.com/products/machine-learning/
+        http://cloud.google.com/products/machine-learning/
 
 For a more sombre view of things, the following article is worth reading:
 
-        https://www.cio.com/article/3223191/artificial-intelligence/a-practical-guide-to-machine-learning-in-business.html
+        http://www.cio.com/article/3223191/artificial-intelligence/a-practical-guide-to-machine-learning-in-business.html
 
 ## Prerequisites
 
 Chris Manning, Stanford, 3 Apr 2017:
 
-> "Essentially, Python has just become the [lingua franca](https://en.wikipedia.org/wiki/Lingua_franca) of nearly all the
+> "Essentially, Python has just become the [lingua franca](http://en.wikipedia.org/wiki/Lingua_franca) of nearly all the
 > deep learning toolkits, so that seems the thing to use."
 
-        https://youtu.be/OQQ-W_63UgQ?list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6&t=2102
+        http://youtu.be/OQQ-W_63UgQ?list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6&t=2102
 
 For an explanation of why Python (as contrasted with other languages) is a good choice for __NLP__
 the following link is worth a look:
@@ -85,16 +85,17 @@ It's not really possible to do much of anything in Python without additional lib
 Essential libraries include:
 
 * [NumPy](http://www.numpy.org/)
-* [SciPy](https://www.scipy.org/index.html)
+* [SciPy](http://www.scipy.org/index.html)
 
 Useful optional libraries include:
 
-* [matplotlib](https://matplotlib.org/)
+* [matplotlib](http://matplotlib.org/)
+* [nltk](http://www.nltk.org/)
 * [pandas](http://pandas.pydata.org/)
 
 Verify library presence and version with `pip` as with `scikit-learn`:
 
-    pip list --format=legacy | grep numpy
+    pip list --format=freeze | grep numpy
 
 [Replace `numpy` above as necessary.]
 
@@ -133,7 +134,7 @@ Simply list the dependencies in a file (for example `requirements` or `requireme
 
 Based upon:
 
-        https://www.udacity.com/course/intro-to-machine-learning--ud120
+        http://www.udacity.com/course/intro-to-machine-learning--ud120
 
 You can find an interview with co-author Katie Malone here:
 
@@ -160,15 +161,15 @@ ___Garbage in, garbage out.___
 For a quick introduction to data cleaning with `numpy` and `pandas`, have a look at this
 great tutorial:
 
-    https://realpython.com/python-data-cleaning-numpy-pandas/
+    http://realpython.com/python-data-cleaning-numpy-pandas/
 
-You can see my stab at it [here](https://github.com/mramshaw/Data-Cleaning).
+You can see my stab at it [here](http://github.com/mramshaw/Data-Cleaning).
 
 ## Quick Hits
 
 For an easy (and quick) introduction to the various Python tools and ML concepts:
 
-        https://www.youtube.com/playlist?list=PLOU2XLYxmsIIuiBfYad6rFYQU_jL2ryal
+        http://www.youtube.com/playlist?list=PLOU2XLYxmsIIuiBfYad6rFYQU_jL2ryal
 
 This series is from mid-2016 so there is a small amount of 'code rot', plus it seems to use
 Python 2 rather than Python 3, but even so it's a quick and fun way to get a brief overview
@@ -189,6 +190,6 @@ of ML and the tools & techniques involved.
 
 There are a number of tools, such as Python, IPython, and Jupyter Notebooks.
 
-One website that gets a lot of mentions is [Anaconda](https://www.anaconda.com/):
+One website that gets a lot of mentions is [Anaconda](http://www.anaconda.com/):
 
-    https://www.anaconda.com/download/
+    http://www.anaconda.com/download/
