@@ -1,6 +1,6 @@
 # Feature Engineering - Machine Learning Recipes #9
 
-[![Known Vulnerabilities](https://snyk.io/test/github/mramshaw/Intro-to-ML/badge.svg?style=plastic&targetFile=Feature_Engineering%2Frequirements.txt)](https://snyk.io/test/github/mramshaw/Intro-to-ML?style=plastic&targetFile=Feature_Engineering%2Frequirements.txt)
+[![Known Vulnerabilities](http://snyk.io/test/github/mramshaw/Intro-to-ML/badge.svg?style=plastic&targetFile=Feature_Engineering%2Frequirements.txt)](http://snyk.io/test/github/mramshaw/Intro-to-ML?style=plastic&targetFile=Feature_Engineering%2Frequirements.txt)
 
 This is a more general video, and less of an actual hands-on.
 

@@ -1,6 +1,6 @@
 # Custom Classifier - Machine Learning Recipes #5
 
-[![Known Vulnerabilities](https://snyk.io/test/github/mramshaw/Intro-to-ML/badge.svg?style=plastic&targetFile=Custom_Classifier%2Frequirements.txt)](https://snyk.io/test/github/mramshaw/Intro-to-ML?style=plastic&targetFile=Custom_Classifier%2Frequirements.txt)
+[![Known Vulnerabilities](http://snyk.io/test/github/mramshaw/Intro-to-ML/badge.svg?style=plastic&targetFile=Custom_Classifier%2Frequirements.txt)](http://snyk.io/test/github/mramshaw/Intro-to-ML?style=plastic&targetFile=Custom_Classifier%2Frequirements.txt)
 
 Writing and evaluating a custom classifier.
 
