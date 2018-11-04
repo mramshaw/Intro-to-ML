@@ -1,6 +1,6 @@
 # Image Classifier (Deep Learning) - Machine Learning Recipes #6
 
-[![Known Vulnerabilities](http://snyk.io/test/github/mramshaw/Intro-to-ML:Image_Classifier/badge.svg?style=plastic&targetFile=requirements.txt)](http://snyk.io/test/github/mramshaw/Intro-to-ML:Image_Classifier?style=plastic&targetFile=requirements.txt)
+[![Known Vulnerabilities](https://snyk.io/test/github/mramshaw/Intro-to-ML/badge.svg?style=plastic&targetFile=Image_Classifier%2Frequirements.txt)](https://snyk.io/test/github/mramshaw/Intro-to-ML?style=plastic&targetFile=Image_Classifier%2Frequirements.txt)
 
 Evaluating images with [TensorFlow](http://www.tensorflow.org/).
 

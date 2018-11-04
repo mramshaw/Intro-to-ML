@@ -1,5 +1,7 @@
 # Hello World - Machine Learning Recipes #1
 
+[![Known Vulnerabilities](https://snyk.io/test/github/mramshaw/Intro-to-ML/badge.svg?style=plastic&targetFile=Hello_World%2Frequirements.txt)](https://snyk.io/test/github/mramshaw/Intro-to-ML?style=plastic&targetFile=Hello_World%2Frequirements.txt)
+
 A quick introduction to ML by writing a classifier using `sklearn`
 
 ## Execution

@@ -1,5 +1,7 @@
 # Features - Machine Learning Recipes #4
 
+[![Known Vulnerabilities](http://snyk.io/test/github/mramshaw/Intro-to-ML/badge.svg?style=plastic&targetFile=Pipeline%2Frequirements.txt)](http://snyk.io/test/github/mramshaw/Intro-to-ML?style=plastic&targetFile=Pipeline%2Frequirements.txt)
+
 Evaluating and comparing classifiers with `sklearn` convenience methods.
 
 [Classifiers can be very easily swapped in or out.]

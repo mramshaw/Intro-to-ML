@@ -1,5 +1,7 @@
 # Handwriting Classifier - Machine Learning Recipes #7
 
+[![Known Vulnerabilities](http://snyk.io/test/github/mramshaw/Intro-to-ML/badge.svg?style=plastic&targetFile=Handwriting_Classifier%2Frequirements.txt)](http://snyk.io/test/github/mramshaw/Intro-to-ML?style=plastic&targetFile=Handwriting_Classifier%2Frequirements.txt)
+
 ![Final_Graphic](images/Figure_6.png)
 
 There are a wide variety of installation options for [TensorFlow](https://www.tensorflow.org/install/).

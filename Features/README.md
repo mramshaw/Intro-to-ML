@@ -1,5 +1,7 @@
 # Features - Machine Learning Recipes #3
 
+[![Known Vulnerabilities](https://snyk.io/test/github/mramshaw/Intro-to-ML/badge.svg?style=plastic&targetFile=Features%2Frequirements.txt)](https://snyk.io/test/github/mramshaw/Intro-to-ML?style=plastic&targetFile=Features%2Frequirements.txt)
+
 Dive a little deeper into ML features with `numpy` and `matplotlib`.
 
 ## Execution

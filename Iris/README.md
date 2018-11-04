@@ -1,5 +1,7 @@
 # Iris - Machine Learning Recipes #2
 
+[![Known Vulnerabilities](http://snyk.io/test/github/mramshaw/Intro-to-ML/badge.svg?style=plastic&targetFile=Iris%2Frequirements.txt)](http://snyk.io/test/github/mramshaw/Intro-to-ML?style=plastic&targetFile=Iris%2Frequirements.txt)
+
 Dive a little deeper into ML classifiers with `sklearn` and [GraphViz](http://www.graphviz.org/).
 
 __GraphViz__ is used to visualize the classifier (it's also great for visualizing MySQL databases).
