@@ -10,6 +10,8 @@ Optionally, __pydot__ (__pydotplus__ if using __python3__) can be used to graph 
 
 [This version uses command-line GraphViz via the `dot` command.]
 
+![Iris varieties](./Iris.png)
+
 ## Execution
 
 To run, type the following:
@@ -41,6 +43,20 @@ The resulting graphic should look like this:
 
 Note that the __left__ branch is always the __True__ path.
 
+## Photo Credits
+
+__Iris setosa__ courtesy Radomil:
+
+    http://commons.wikimedia.org/wiki/File:Kosaciec_szczecinkowaty_Iris_setosa.jpg
+
+__Iris versicolor__ courtesy Danielle Langlois:
+
+    http://commons.wikimedia.org/wiki/File:Iris_versicolor_3.jpg
+
+__Iris virginica__ courtesy Frank Mayfield:
+
+    http://commons.wikimedia.org/wiki/File:Iris_virginica.jpg
+
 ## Credits
 
-    https://www.youtube.com/watch?v=tNa99PG8hR8
+    http://www.youtube.com/watch?v=tNa99PG8hR8
