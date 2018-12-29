@@ -14,6 +14,7 @@ The table of contents is as follows:
 * [Alternatives](#alternatives)
 * [Data Cleaning](#data-cleaning)
 * [Quick Hits](#quick-hits)
+* [End to End](#end-to-end)
 * [Tools](#tools)
 
 ## Overview
@@ -187,6 +188,12 @@ of ML and the tools & techniques involved.
 * [Machine Learning Recipes #8](./Decision_Tree/)
 * [Machine Learning Recipes #9](./Feature_Engineering/)
 * [Machine Learning Recipes #10](./WEKA/)
+
+## End to End
+
+For a deeper dive into the Iris dataset, check out my [ML with SciPy](http://github.com/mramshaw/ML_with_SciPy) repo.
+
+This project shows a full end-to-end workflow.
 
 ## Tools
 
