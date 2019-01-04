@@ -4,6 +4,8 @@
 
 Dive a little deeper into ML classifiers with `sklearn` and [GraphViz](http://www.graphviz.org/).
 
+[For a deeper dive into the Iris dataset, check out my [ML with SciPy](http://github.com/mramshaw/ML_with_SciPy) repo.]
+
 __GraphViz__ is used to visualize the classifier (it's also great for visualizing MySQL databases).
 
 Optionally, __pydot__ (__pydotplus__ if using __python3__) can be used to graph the data.
