@@ -168,6 +168,8 @@ great tutorial:
 
 You can see my stab at it [here](http://github.com/mramshaw/Data-Cleaning).
 
+For a more complicated example, check out my [ML with Missing Data](http://github.com/mramshaw/ML_with_Missing_Data) repo.
+
 ## Quick Hits
 
 For an easy (and quick) introduction to the various Python tools and ML concepts:
