@@ -8,6 +8,7 @@ The table of contents is as follows:
 * [Prerequisites](#prerequisites)
 * [scikit-learn](#scikit-learn)
 * [Libraries](#libraries)
+    * [Matplotlib / Seaborn](#matplotlib--seaborn)
 * [requirements.txt](#requirementstxt)
 * [TODO](#todo)
 * [Credits](#credits)
@@ -118,6 +119,16 @@ Or use `try_import.py` for multiple libraries as shown:
     $
 
 Install the library with `pip` (either multi-user or single-user) as with `scikit-learn` above.
+
+#### Matplotlib / Seaborn
+
+Matplotlib is great for plotting variables, but can be very low-level.
+
+To make these graphs look a little better, check out my [No More Blue](http://github.com/mramshaw/No_More_Blue) repo.
+
+Or - for a higher-level library - check out [Seaborn](http://seaborn.pydata.org).
+
+[Seaborn will greatly simplify a number of difficult `matplotlib` graphing exercises.]
 
 ## requirements.txt
 
