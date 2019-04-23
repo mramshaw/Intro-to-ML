@@ -8,7 +8,9 @@ The table of contents is as follows:
 * [Prerequisites](#prerequisites)
 * [scikit-learn](#scikit-learn)
 * [Libraries](#libraries)
+    * [Numpy](#numpy)
     * [Matplotlib / Seaborn](#matplotlib--seaborn)
+    * [StatsModels](#statsmodels)
 * [requirements.txt](#requirementstxt)
 * [TODO](#todo)
 * [Credits](#credits)
@@ -59,7 +61,7 @@ the following link is worth a look:
 
         http://www.nltk.org/book_1ed/ch00-extras.html
 
-1. Python (either Python 2 or Python 3 - or even __both__)
+1. Python (Python 2 support has been dropped from a number of projects, so use Python 3)
 
 2. `pip` (if using Python 2) or `pip3` (if using Python 3)
 
@@ -120,6 +122,13 @@ Or use `try_import.py` for multiple libraries as shown:
 
 Install the library with `pip` (either multi-user or single-user) as with `scikit-learn` above.
 
+#### Numpy
+
+NumPy allows for a nice performance optimization called __single instruction, multiple data__, or
+[SIMD](http://en.wikipedia.org/wiki/SIMD).
+
+Basically, this allows for vector or matrix handling (compare 'vectors\ pt1.py' to 'vectors\ pt2.py').
+
 #### Matplotlib / Seaborn
 
 Matplotlib is great for plotting variables, but can be very low-level.
@@ -129,6 +138,15 @@ To make these graphs look a little better, check out my [No More Blue](http://gi
 Or - for a higher-level library - check out [Seaborn](http://seaborn.pydata.org).
 
 [Seaborn will greatly simplify a number of difficult `matplotlib` graphing exercises.]
+
+#### StatsModels
+
+Although not used in this course, [StatsModel](http://www.statsmodels.org/stable/index.html) is also worth a look.
+
+It provides classes and functions for the estimation of many different statistical models, as well as for conducting
+statistical tests, and statistical data exploration.
+
+Some __Seaborn__ functions will optionally use StatsModels if it is installed.
 
 ## requirements.txt
 
