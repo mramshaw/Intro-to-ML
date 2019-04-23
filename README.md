@@ -141,7 +141,7 @@ Or - for a higher-level library - check out [Seaborn](http://seaborn.pydata.org)
 
 #### StatsModels
 
-Although not used in this course, [StatsModel](http://www.statsmodels.org/stable/index.html) is also worth a look.
+Although not used in this course, [StatsModels](http://www.statsmodels.org/stable/index.html) is also worth a look.
 
 It provides classes and functions for the estimation of many different statistical models, as well as for conducting
 statistical tests, and statistical data exploration.
