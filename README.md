@@ -49,24 +49,25 @@ For a more sombre view of things, the following article is worth reading:
 
 ## Prerequisites
 
-Chris Manning, Stanford, 3 Apr 2017:
+[Chris Manning](http://profiles.stanford.edu/chris-manning), Stanford, 3 Apr 2017:
 
 > "Essentially, Python has just become the [lingua franca](http://en.wikipedia.org/wiki/Lingua_franca) of nearly all the
 > deep learning toolkits, so that seems the thing to use."
 
         http://youtu.be/OQQ-W_63UgQ?list=PL3FW7Lu3i5Jsnh1rnUwq_TcylNr7EkRe6&t=2102
 
-For an explanation of why Python (as contrasted with other languages) is a good choice for __NLP__
+For an explanation of why Python (as contrasted with other languages) is a good choice for
+[Natural language processing](http://en.wikipedia.org/wiki/Natural_language_processing)
 the following link is worth a look:
 
         http://www.nltk.org/book_1ed/ch00-extras.html
 
 1. Python (Python 2 support has been dropped from a number of projects, so use Python 3)
 
-2. `pip` (if using Python 2) or `pip3` (if using Python 3)
+2. `pip` or possibly `pip3` (if using Python 2 __and__ Python 3)
 
 `pip` (or `pip3`) is the Package manager for Python, much as `npm` is the package manager
-for the Node JavaScript platform.
+for the [Node.js](http://nodejs.org/) platform.
 
 ## scikit-learn
 
@@ -113,12 +114,16 @@ Or verify library presence and version with Python:
 
 Or use `try_import.py` for multiple libraries as shown:
 
-    $ python try_import.py numpy scipy sklearn keras
-    "numpy" was imported
-    "scipy" was imported
-    "sklearn" was imported
-    "keras" could not be imported - try "pip install --user keras"
-    $
+```bash
+$ python try_import.py numpy scipy sklearn keras pytorch
+"numpy" was imported
+"scipy" was imported
+"sklearn" was imported
+Using TensorFlow backend.
+"keras" was imported
+"pytorch" could not be imported - try "pip install --user pytorch"
+$
+```
 
 Install the library with `pip` (either multi-user or single-user) as with `scikit-learn` above.
 
