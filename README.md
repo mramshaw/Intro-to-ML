@@ -166,6 +166,8 @@ Simply list the dependencies in a file (for example `requirements` or `requireme
 ## TODO
 
 - [ ] Finish course
+- [x] Update Quick Hit links to make them easier to navigate
+- [ ] Update everything for the most recent (and secure) version of TensorFlow
 
 ## Credits
 
@@ -214,16 +216,16 @@ This series is from mid-2016 so there is a small amount of 'code rot', plus it s
 Python 2 rather than Python 3, but even so it's a quick and fun way to get a brief overview
 of ML and the tools & techniques involved.
 
-* [Machine Learning Recipes #1](./Hello_World/)
-* [Machine Learning Recipes #2](./Iris/)
-* [Machine Learning Recipes #3](./Features/)
-* [Machine Learning Recipes #4](./Pipeline/)
-* [Machine Learning Recipes #5](./Custom_Classifier/)
-* [Machine Learning Recipes #6](./Image_Classifier/)
-* [Machine Learning Recipes #7](./Handwriting_Classifier/)
-* [Machine Learning Recipes #8](./Decision_Tree/)
-* [Machine Learning Recipes #9](./Feature_Engineering/)
-* [Machine Learning Recipes #10](./WEKA/)
+* [Machine Learning Recipes #1 (Hello World)](./Hello_World/)
+* [Machine Learning Recipes #2 (Visualizing a Decision Tree)](./Iris/)
+* [Machine Learning Recipes #3 (What Makes a Good Feature?)](./Features/)
+* [Machine Learning Recipes #4 (Let's Write a Pipeline)](./Pipeline/)
+* [Machine Learning Recipes #5 (Writing Our First Classifier)](./Custom_Classifier/)
+* [Machine Learning Recipes #6 (Train an Image Classifier with TensorFlow for Poets)](./Image_Classifier/)
+* [Machine Learning Recipes #7 (Classifying Handwritten Digits with TF.Learn)](./Handwriting_Classifier/)
+* [Machine Learning Recipes #8 (Let's Write a Decision Tree Classifier from Scratch)](./Decision_Tree/)
+* [Machine Learning Recipes #9 (Intro to Feature Engineering with TensorFlow)](./Feature_Engineering/)
+* [Machine Learning Recipes #10 (Getting Started with Weka)](./WEKA/)
 
 ## End to End
 
